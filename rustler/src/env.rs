@@ -15,7 +15,7 @@ type EnvId<'a> = PhantomData<*mut &'a u8>;
 /// communicating with the BEAM, like decoding and encoding terms.
 ///
 /// There is no way to allocate a Env at the moment, but this may be possible in the future.
-#[derive(Clone, Copy)]
+#[derive(Clone, Copy, Hash)]
 pub struct Env<'a> {
     env: NIF_ENV,
     id: EnvId<'a>,
