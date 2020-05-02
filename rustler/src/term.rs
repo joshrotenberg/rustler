@@ -9,7 +9,7 @@ use std::fmt::{self, Debug};
 ///
 /// Term is cloneable and copyable, but it can not exist outside of the lifetime of the Env
 /// that owns it.
-#[derive(Clone, Copy)]
+#[derive(Clone, Hash, Copy)]
 pub struct Term<'a> {
     term: NIF_TERM,
     env: Env<'a>,
